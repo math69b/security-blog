@@ -1,0 +1,33 @@
+{
+  "posts": [
+
+    {
+      "title":   "Investigando WinMemoryCleaner.exe — possível persistência via tarefa agendada",
+      "date":    "2025-03-20",
+      "tag":     "Análise",
+      "excerpt": "Análise de incidente real envolvendo WinMemoryCleaner com possível persistência via Scheduled Task (T1053.005) em endpoint AzureAD. Processo de triagem e hunting no MDE.",
+      "mitre":   ["T1053.005", "T1036", "T1204"],
+      "url":     "posts/incident-response/winmemorycleaner-scheduled-task.html"
+    }
+
+  ]
+}
+
+/*
+  ============================================================
+  COMO ADICIONAR UM NOVO POST EM INCIDENT RESPONSE:
+
+  Copie um bloco abaixo, preencha os campos e crie o arquivo
+  HTML correspondente na pasta posts/incident-response/
+
+  Exemplo de estrutura para posts de IR:
+  {
+    "title":   "Nome do incidente ou técnica investigada",
+    "date":    "AAAA-MM-DD",
+    "tag":     "IR",
+    "excerpt": "Breve descrição do caso e o que o leitor vai aprender",
+    "mitre":   ["TXXX", "TXXX.XXX"],
+    "url":     "posts/incident-response/slug-do-post.html"
+  }
+  ============================================================
+*/
