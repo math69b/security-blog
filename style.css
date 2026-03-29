@@ -10,11 +10,11 @@
 }
 
 :root {
-  --bg:         #0a0c10;
+  --bg:         #800080;
   --surface:    #111318;
   --surface2:   #181c24;
   --border:     #1e2330;
-  --accent:     #00e5ff;
+  --accent:     #ffffff;
   --accent2:    #ff4d6d;
   --text:       #e2e8f0;
   --text-dim:   #64748b;
