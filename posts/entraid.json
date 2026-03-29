@@ -30,28 +30,3 @@
 
   ]
 }
-
-/*
-  ============================================================
-  COMO ADICIONAR UM NOVO POST NESTA CATEGORIA:
-
-  1. Copie um bloco { ... } acima e cole ANTES do último item
-     (lembre-se da vírgula entre blocos)
-
-  2. Preencha os campos:
-     - title:   Título do post (string)
-     - date:    Data no formato "AAAA-MM-DD"
-     - tag:     Rótulo curto — ex: "Tutorial", "IR", "Hardening", "Análise"
-     - excerpt: Resumo de 1-2 linhas exibido na listagem
-     - mitre:   Array de técnicas MITRE — [] se não se aplicar
-     - url:     Caminho para o arquivo HTML do post
-                Ex: "posts/entraid/meu-novo-post.html"
-
-  3. Crie o arquivo HTML do post em posts/entraid/
-     Use o template em posts/_template.html como base
-
-  4. Commit e push — o GitHub Pages serve automaticamente
-
-  IMPORTANTE: Mantenha o JSON válido (sem vírgula no último item)
-  ============================================================
-*/
