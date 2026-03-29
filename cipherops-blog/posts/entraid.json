@@ -1,0 +1,57 @@
+{
+  "posts": [
+
+    {
+      "title":   "Conditional Access: construindo políticas sem quebrar o ambiente",
+      "date":    "2025-03-10",
+      "tag":     "Tutorial",
+      "excerpt": "Como projetar e testar políticas de Conditional Access em modo report-only antes de enforcar, evitando lockout de usuários críticos.",
+      "mitre":   ["T1078", "T1556.006"],
+      "url":     "posts/entraid/conditional-access-sem-quebrar.html"
+    },
+
+    {
+      "title":   "PIM Just-in-Time: reduzindo exposição de contas privilegiadas",
+      "date":    "2025-02-18",
+      "tag":     "Hardening",
+      "excerpt": "Configurando Privileged Identity Management para ativar roles privilegiadas apenas quando necessário, com aprovação e justificativa obrigatória.",
+      "mitre":   ["T1078.004"],
+      "url":     "posts/entraid/pim-just-in-time.html"
+    },
+
+    {
+      "title":   "Investigando logins suspeitos com o Sign-in Logs do Entra ID",
+      "date":    "2025-01-30",
+      "tag":     "IR",
+      "excerpt": "Walkthrough de investigação de um alerta de impossible travel usando os logs nativos do Entra ID e KQL no Sentinel.",
+      "mitre":   ["T1078", "T1110"],
+      "url":     "posts/entraid/investigando-logins-suspeitos.html"
+    }
+
+  ]
+}
+
+/*
+  ============================================================
+  COMO ADICIONAR UM NOVO POST NESTA CATEGORIA:
+
+  1. Copie um bloco { ... } acima e cole ANTES do último item
+     (lembre-se da vírgula entre blocos)
+
+  2. Preencha os campos:
+     - title:   Título do post (string)
+     - date:    Data no formato "AAAA-MM-DD"
+     - tag:     Rótulo curto — ex: "Tutorial", "IR", "Hardening", "Análise"
+     - excerpt: Resumo de 1-2 linhas exibido na listagem
+     - mitre:   Array de técnicas MITRE — [] se não se aplicar
+     - url:     Caminho para o arquivo HTML do post
+                Ex: "posts/entraid/meu-novo-post.html"
+
+  3. Crie o arquivo HTML do post em posts/entraid/
+     Use o template em posts/_template.html como base
+
+  4. Commit e push — o GitHub Pages serve automaticamente
+
+  IMPORTANTE: Mantenha o JSON válido (sem vírgula no último item)
+  ============================================================
+*/
