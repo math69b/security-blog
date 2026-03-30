@@ -5,12 +5,10 @@
 
 // Mapeamento: ID da categoria → título exibido na página de posts
 const CATEGORY_LABELS = {
-  'entraid':            'Entra ID',
-  'defender-endpoint':  'Defender for Endpoint',
+  'defender-suite':     'Defender Suite',
   'incident-response':  'Incident Response',
   'purview':            'Purview',
   'intune':             'Intune',
-  'defender-cloud-apps':'Defender for Cloud Apps',
   'hardening':          'Hardening',
   'ofensivo':           'Segurança Ofensiva',
 };

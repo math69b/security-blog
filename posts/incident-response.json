@@ -12,22 +12,3 @@
 
   ]
 }
-
-/*
-  ============================================================
-  COMO ADICIONAR UM NOVO POST EM INCIDENT RESPONSE:
-
-  Copie um bloco abaixo, preencha os campos e crie o arquivo
-  HTML correspondente na pasta posts/incident-response/
-
-  Exemplo de estrutura para posts de IR:
-  {
-    "title":   "Nome do incidente ou técnica investigada",
-    "date":    "AAAA-MM-DD",
-    "tag":     "IR",
-    "excerpt": "Breve descrição do caso e o que o leitor vai aprender",
-    "mitre":   ["TXXX", "TXXX.XXX"],
-    "url":     "posts/incident-response/slug-do-post.html"
-  }
-  ============================================================
-*/

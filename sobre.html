@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sobre — Andrew Lobo</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    .about-page {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 64px 32px 100px;
+    }
+
+    .about-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 12px;
+      letter-spacing: 0.05em;
+      margin-bottom: 64px;
+      border: 1px solid var(--border);
+      padding: 8px 16px;
+      border-radius: 6px;
+      transition: border-color 220ms, color 220ms;
+    }
+    .about-back:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* Hero */
+    .about-hero {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 48px;
+      align-items: start;
+      margin-bottom: 72px;
+      padding-bottom: 72px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .about-label {
+      font-size: 11px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .about-label::before {
+      content: '';
+      display: inline-block;
+      width: 20px;
+      height: 1px;
+      background: var(--accent);
+    }
+
+    .about-name {
+      font-family: var(--font-display);
+      font-weight: 800;
+      font-size: clamp(36px, 5vw, 56px);
+      color: var(--text);
+      letter-spacing: -0.02em;
+      line-height: 1.05;
+      margin-bottom: 8px;
+    }
+
+    .about-role {
+      font-size: 13px;
+      color: var(--text-dim);
+      margin-bottom: 28px;
+      line-height: 1.6;
+    }
+
+    .about-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .about-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 12px;
+      color: var(--text-dim);
+      text-decoration: none;
+      border: 1px solid var(--border);
+      padding: 6px 14px;
+      border-radius: 6px;
+      letter-spacing: 0.04em;
+      transition: border-color 220ms, color 220ms;
+    }
+    .about-link:hover { border-color: var(--accent); color: var(--accent); }
+
+    .about-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 12px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 48px;
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    .about-section {
+      margin-bottom: 64px;
+    }
+
+    .about-section-title {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 20px;
+      color: var(--text);
+      letter-spacing: -0.01em;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .about-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--border);
+    }
+
+    .about-text {
+      color: var(--text-dim);
+      font-size: 14px;
+      line-height: 1.9;
+      margin-bottom: 16px;
+    }
+
+    .about-text strong { color: var(--text); font-weight: 500; }
+
+    /* Timeline */
+    .timeline {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+
+    .timeline-item {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 24px;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+
+    .timeline-period {
+      font-size: 11px;
+      color: var(--accent);
+      letter-spacing: 0.08em;
+      padding-top: 2px;
+    }
+
+    .timeline-content-title {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .timeline-content-desc {
+      font-size: 12px;
+      color: var(--text-dim);
+      line-height: 1.6;
+    }
+
+    /* Certs */
+    .certs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 12px;
+    }
+
+    .cert-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 16px 18px;
+    }
+
+    .cert-card.active { border-color: rgba(0, 229, 255, 0.3); }
+    .cert-card.planned { opacity: 0.6; }
+
+    .cert-status {
+      font-size: 10px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+    .cert-card.active  .cert-status { color: var(--accent); }
+    .cert-card.planned .cert-status { color: var(--text-dim); }
+
+    .cert-name {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+      line-height: 1.3;
+    }
+
+    .cert-issuer {
+      font-size: 11px;
+      color: var(--text-dim);
+      margin-top: 4px;
+    }
+
+    /* Blog motivation */
+    .motivation-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--accent);
+      border-radius: 8px;
+      padding: 28px 32px;
+    }
+
+    @media (max-width: 640px) {
+      .about-page { padding: 40px 20px 64px; }
+      .about-hero { grid-template-columns: 1fr; }
+      .about-avatar { display: none; }
+      .timeline-item { grid-template-columns: 1fr; gap: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-bracket">[</span>
+        <span class="logo-name">Andrew Lobo</span>
+        <span class="logo-bracket">]</span>
+        <span class="logo-tag">// security blog</span>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="sobre.html" class="nav-link active">Sobre</a>
+        <a href="https://github.com/math69b" target="_blank" class="nav-link">GitHub ↗</a>
+        <a href="https://linkedin.com/in/SEU-PERFIL" target="_blank" class="nav-link">LinkedIn ↗</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="about-page">
+
+    <a class="about-back" href="index.html">← voltar para home</a>
+
+    <!-- Hero -->
+    <div class="about-hero">
+      <div>
+        <div class="about-label">// sobre</div>
+        <h1 class="about-name">Andrew Lobo</h1>
+        <p class="about-role">
+          Microsoft Security · Incident Responder · Red Team Enthusiast<br />
+          Protegendo identidades e dispositivos no ecossistema Microsoft
+        </p>
+        <div class="about-links">
+          <a class="about-link" href="https://linkedin.com/in/SEU-PERFIL" target="_blank">LinkedIn ↗</a>
+          <a class="about-link" href="https://github.com/math69b" target="_blank">GitHub ↗</a>
+        </div>
+      </div>
+      <div class="about-avatar">🐺</div>
+    </div>
+
+    <!-- Trajetória -->
+    <section class="about-section">
+      <h2 class="about-section-title">Trajetória</h2>
+
+      <div class="timeline">
+
+        <div class="timeline-item">
+          <div class="timeline-period">Início</div>
+          <div>
+            <div class="timeline-content-title">Redes & Infraestrutura</div>
+            <div class="timeline-content-desc">
+              Comecei na área de redes, operando firewalls como <strong>Fortinet FortiGate</strong>, <strong>pfSense</strong> e <strong>Palo Alto</strong>. Foi onde desenvolvi a base de entender tráfego, perímetro e controle de acesso.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-period">Transição</div>
+          <div>
+            <div class="timeline-content-title">Endpoint Security — Trend Micro/Kaspersky</div>
+            <div class="timeline-content-desc">
+              Migrei para segurança de endpoints com soluções da <strong>Trend Micro e Kaspersky</strong>, aprofundando o olhar para o que acontece dentro dos dispositivos — não apenas na borda da rede.
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline-item">
+          <div class="timeline-period">Hoje</div>
+          <div>
+            <div class="timeline-content-title">Microsoft Security Ecosystem</div>
+            <div class="timeline-content-desc">
+              Trabalho protegendo, desenhando e documentando soluções no ecossistema Microsoft — cobrindo <strong>+2.000 dispositivos e identidades</strong>. Atuo com Defender for Endpoint, Entra ID, Defender for Cloud Apps, Intune e Purview. Sou responsável também pela <strong>resposta a incidentes.</strong>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Foco -->
+    <section class="about-section">
+      <h2 class="about-section-title">Foco & Interesses</h2>
+      <p class="about-text">
+        Sou fanático por <strong>segurança ofensiva</strong> com foco em red team. Gosto de pesquisar vulnerabilidades em softwares, replicar PoC e entender profundamente como os ataques funcionam, porque acredito que você só defende bem o que você sabe atacar.
+      </p>
+      <p class="about-text">
+        Tenho uma obsessão particular pelo <strong>Windows</strong>, suas internals, mecanismos de segurança, formas de bypass e como o sistema realmente funciona por baixo dos panos. Esse entendimento é o que conecta meu trabalho defensivo com a mentalidade ofensiva.
+      </p>
+    </section>
+
+    <!-- Certificações -->
+    <section class="about-section">
+      <h2 class="about-section-title">Certificações</h2>
+      <div class="certs-grid">
+
+        <div class="cert-card active">
+          <div class="cert-status">✓ Obtida</div>
+          <div class="cert-name">SC-300</div>
+          <div class="cert-issuer">Microsoft — Identity & Access</div>
+        </div>
+
+        <div class="cert-card active">
+          <div class="cert-status">✓ Obtida</div>
+          <div class="cert-name">MS-102</div>
+          <div class="cert-issuer">Microsoft — M365 Administrator</div>
+        </div>
+
+        <div class="cert-card active">
+          <div class="cert-status">✓ Obtida</div>
+          <div class="cert-name">eJPT</div>
+          <div class="cert-issuer">INE Security</div>
+        </div>
+
+        <div class="cert-card active">
+          <div class="cert-status">✓ Obtida</div>
+          <div class="cert-name">PJPT</div>
+          <div class="cert-issuer">TCM Security</div>
+        </div>
+
+        <div class="cert-card planned">
+          <div class="cert-status">→ Em andamento</div>
+          <div class="cert-name">SC-200</div>
+          <div class="cert-issuer">Microsoft — Security Operations</div>
+        </div>
+
+        <div class="cert-card planned">
+          <div class="cert-status">→ Em andamento</div>
+          <div class="cert-name">DCPT</div>
+          <div class="cert-issuer">Desec Security</div>
+        </div>
+
+        <div class="cert-card planned">
+          <div class="cert-status">→ Planejada</div>
+          <div class="cert-name">CRTO</div>
+          <div class="cert-issuer">Zero-Point Security</div>
+        </div>
+
+        <div class="cert-card planned">
+          <div class="cert-status">→ Planejada</div>
+          <div class="cert-name">CARTP</div>
+          <div class="cert-issuer">Altered Security</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Por que o blog -->
+    <section class="about-section">
+      <h2 class="about-section-title">Por que esse blog</h2>
+      <div class="motivation-box">
+        <p class="about-text">
+          Eu tenho um Obsidian cheio de anotações, conteúdo suficiente pra meses de posts. Mesmo assim, por muito tempo fiquei travado na ideia de compartilhar, achando que talvez não fosse bom o suficiente ou relevante pra outras pessoas.
+        <p class="about-text">
+          Só que, parando pra pensar, eu não estaria onde estou hoje se não fosse pelos inúmeros artigos e blogs que consumi ao longo do tempo.        </p>
+        <p class="about-text">
+          Então resolvi começar. Sem pressão, sem perfeccionismo, só compartilhar, aos poucos, o que fui aprendendo.     </p>
+        <p class="about-text" style="margin-bottom: 0;">
+          Vai ter de tudo um pouco: desde hardening de endpoints até análises de incidentes reais. E, no fim das contas, se isso ajudar pelo menos uma pessoa a destravar algo ou aprender alguma coisa nova, já fez sentido pra mim.      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <span class="footer-text">Andrew Lobo · Security Blog · <script>document.write(new Date().getFullYear())</script></span>
+      <span class="footer-stack">Microsoft Ecosystem · LATAM</span>
+    </div>
+  </footer>
+
+</body>
+</html>
