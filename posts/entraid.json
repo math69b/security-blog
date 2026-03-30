@@ -26,6 +26,33 @@
       "excerpt": "Walkthrough de investigação de um alerta de impossible travel usando os logs nativos do Entra ID e KQL no Sentinel.",
       "mitre":   ["T1078", "T1110"],
       "url":     "posts/entraid/investigando-logins-suspeitos.html"
+    },
+
+        {
+      "title":   "Investigando logins suspeitos com o Sign-in Logs do Entra ID",
+      "date":    "2025-01-30",
+      "tag":     "IR",
+      "excerpt": "Walkthrough de investigação de um alerta de impossible travel usando os logs nativos do Entra ID e KQL no Sentinel.",
+      "mitre":   ["T1078", "T1110"],
+      "url":     "posts/entraid/investigando-logins-suspeitos.html"
+    },
+
+        {
+      "title":   "Investigando logins suspeitos com o Sign-in Logs do Entra ID",
+      "date":    "2025-01-30",
+      "tag":     "IR",
+      "excerpt": "Walkthrough de investigação de um alerta de impossible travel usando os logs nativos do Entra ID e KQL no Sentinel.",
+      "mitre":   ["T1078", "T1110"],
+      "url":     "posts/entraid/investigando-logins-suspeitos.html"
+    },
+    
+    {
+      "title":   "Investigando logins suspeitos com o Sign-in Logs do Entra ID",
+      "date":    "2025-01-30",
+      "tag":     "IR",
+      "excerpt": "Walkthrough de investigação de um alerta de impossible travel usando os logs nativos do Entra ID e KQL no Sentinel.",
+      "mitre":   ["T1078", "T1110"],
+      "url":     "posts/entraid/investigando-logins-suspeitos.html"
     }
 
   ]
